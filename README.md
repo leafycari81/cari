@@ -5,13 +5,14 @@
 ## 掛上 GitHub Pages
 
 1. 在 GitHub 建一個新的 repository（例如 `caris-english`），可設 Public。
-2. 把這個資料夾裡的檔案全部上傳到 repo 根目錄（`index.html`、`manifest.webmanifest`、`icons/`、`.nojekyll`）。
+2. 把這個資料夾裡的檔案、**連同子資料夾**全部上傳到 repo 根目錄：`index.html`、`app.dc.html`、`support.js`、`manifest.webmanifest`、`apple-touch-icon.png`、`icons/`、`_ds/`、`.nojekyll`。
+   （GitHub 網頁上傳：Add file → Upload files，可直接把整個資料夾拖進來；檔案都很小，全部加起來不到 300 KB。）
 3. Settings → Pages → Source 選 `Deploy from a branch`，Branch 選 `main` / `/ (root)`，Save。
 4. 約一分鐘後網址為 `https://<你的帳號>.github.io/caris-english/`。
 
 ## 裝到平板主畫面
 
-- iPad（Safari）：開網址 → 分享 → 加入主畫面，圖示會是英國國旗。
+- iPad（Safari）：開網址（結尾是 `/`，不要直接開 app.html）→ 分享 → 加入主畫面，圖示會是英國國旗。若之前加過舊的捷徑，請先刪除再重新加入。
 - Android 平板（Chrome）：開網址 → 右上選單 → 安裝應用程式。
 
 ## 功能
@@ -27,5 +28,6 @@
 
 ## 注意
 
+- 首次開啟需要網路（字型與執行庫從 CDN 載入），之後瀏覽器會快取。
 - 資料存在該台平板的瀏覽器裡，不會同步到其他裝置；換裝置或清瀏覽器資料前請先匯出 Excel。
 - 段考結算歸零無法復原，請先匯出。
