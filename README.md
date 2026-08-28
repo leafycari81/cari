@@ -5,8 +5,9 @@
 ## 掛上 GitHub Pages
 
 1. 在 GitHub 建一個新的 repository（例如 `caris-english`），可設 Public。
-2. 把這個資料夾裡的檔案、**連同子資料夾**全部上傳到 repo 根目錄：`index.html`、`app.dc.html`、`support.js`、`manifest.webmanifest`、`apple-touch-icon.png`、`icons/`、`_ds/`、`.nojekyll`。
+2. 把這個資料夾裡的檔案、**連同子資料夾**全部上傳到 repo 根目錄：`index.html`、`app.dc.html`、`support.js`、`manifest.webmanifest`、`apple-touch-icon.png`、`icons/`、`ds/`。
    （GitHub 網頁上傳：Add file → Upload files，可直接把整個資料夾拖進來；檔案都很小，全部加起來不到 300 KB。）
+   → `ds/styles.css` 是版面樣式，**沒有它版面會全跑掉**，請確定這個資料夾有上傳成功。
 3. Settings → Pages → Source 選 `Deploy from a branch`，Branch 選 `main` / `/ (root)`，Save。
 4. 約一分鐘後網址為 `https://<你的帳號>.github.io/caris-english/`。
 
