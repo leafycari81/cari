@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cari's English</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-cache">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
@@ -15,12 +16,1079 @@
 <meta name="apple-mobile-web-app-title" content="Cari's English">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#c67139">
-<style>
-  html, body { margin: 0; height: 100%; background: #f5ead8; }
-  iframe { display: block; width: 100%; height: 100%; border: 0; }
-</style>
+<!-- build: v6 統計改版 -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-<iframe src="app.dc.html?v=5" title="Cari's English"></iframe>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<style>
+/* Organic — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo:wght@400&family=Figtree:wght@400;600;700&display=swap');
+
+:root {
+  --color-bg: #f5ead8;
+  --color-surface: #ebddc5;
+  --color-text: #201e1d;
+  --color-accent: #c67139;
+  --color-accent-2: #7a8a5e;
+  --color-divider: color-mix(in srgb, #201e1d 16%, transparent);
+
+  /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
+     same step of any role matches the others in visual value. */
+  --color-neutral-100: #f9f4ed;
+  --color-neutral-200: #eee7db;
+  --color-neutral-300: #dcd3c4;
+  --color-neutral-400: #c0b6a5;
+  --color-neutral-500: #a19786;
+  --color-neutral-600: #82796a;
+  --color-neutral-700: #645c50;
+  --color-neutral-800: #474238;
+  --color-neutral-900: #2e2b25;
+
+  --color-accent-100: #fff2eb;
+  --color-accent-200: #ffe1d0;
+  --color-accent-300: #ffc6a5;
+  --color-accent-400: #f6a06b;
+  --color-accent-500: #d67f48;
+  --color-accent-600: #b2622d;
+  --color-accent-700: #8c491a;
+  --color-accent-800: #643312;
+  --color-accent-900: #402310;
+
+  --color-accent-2-100: #f0fae1;
+  --color-accent-2-200: #e1eecc;
+  --color-accent-2-300: #ccdbb2;
+  --color-accent-2-400: #aebf92;
+  --color-accent-2-500: #8fa073;
+  --color-accent-2-600: #728157;
+  --color-accent-2-700: #56633f;
+  --color-accent-2-800: #3d472b;
+  --color-accent-2-900: #272e1b;
+
+  --font-heading: "Caprasimo", system-ui, sans-serif;
+  --font-heading-weight: 400;
+  --font-body: "Figtree", system-ui, sans-serif;
+
+  --space-1: 4.4px;
+  --space-2: 8.8px;
+  --space-3: 13.2px;
+  --space-4: 17.6px;
+  --space-6: 26.4px;
+  --space-8: 35.2px;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+
+  /* Elevation — derived from the ground: soft ink-tinted shadows on a
+     light theme, a hairline edge + ambient darkness on a dark one. */
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #2e2b25 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2e2b25 16%, transparent);
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2e2b25 22%, transparent);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
+
+.washed{filter:saturate(0.6) contrast(0.85) brightness(1.1) opacity(0.94)}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Components — built with the tokens above. Plain CSS
+   on plain HTML: no JavaScript, no build step. Each class is documented in
+   readme.md and demonstrated in foundations/ and components/.
+   ══════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-size: 15px; line-height: 1.55; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 var(--space-2);
+}
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+h3 { font-size: 25px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; }
+h6 { letter-spacing: 0.08em; text-transform: uppercase; }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption {
+  font-size: 11px; margin-top: var(--space-1);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* — rules — */
+.hr {
+  height: 1px; border: 0; margin: var(--space-4) 0;
+  background: var(--color-divider);
+}
+
+/* — buttons — */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 14px; line-height: 1.2; color: var(--color-text); /* matches the .input's 14px —
+     the pair sits side by side in sign-up rows */
+  background: transparent; border: 1px solid transparent;
+  padding: var(--space-2) calc(var(--space-3) * 1.2);
+  border-radius: var(--radius-md);
+}
+.btn svg { display: block; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: var(--color-accent); color: var(--color-bg); }
+.btn-primary:hover { background: var(--color-accent-600); }
+.btn-primary:active { background: var(--color-accent-700); }
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn-ghost { color: var(--color-accent); padding-inline: var(--space-1); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+.btn-icon { width: 36px; height: 36px; padding: 0; }
+.btn-block { width: 100%; margin-top: var(--space-2); }
+
+/* — forms — */
+.field > label {
+  display: block; font-size: 12px; margin-bottom: 5px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.input {
+  width: 100%; min-height: 36px; padding: 6px 10px; font: inherit;
+  font-size: 14px; color: var(--color-text); caret-color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.input:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+.input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
+textarea.input { min-height: 90px; resize: vertical; }
+.radio { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+.radio input, .seg-opt input {
+  position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+}
+.radio .dot {
+  width: 16px; height: 16px; flex: none; border-radius: 50%;
+  border: 1.5px solid var(--color-divider);
+}
+.radio:hover .dot { border-color: var(--color-accent); }
+.radio input:checked + .dot {
+  border-color: var(--color-accent); background: var(--color-accent);
+  box-shadow: inset 0 0 0 4px var(--color-bg);
+}
+.radio input:focus-visible + .dot { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.seg {
+  display: inline-flex; overflow: hidden;
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.seg-opt {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; font-size: 13px; cursor: pointer;
+}
+.seg-opt + .seg-opt { border-left: 1px solid var(--color-divider); }
+.seg-opt:has(input:checked) { background: var(--color-accent); color: var(--color-bg); }
+.seg-opt:not(:has(input:checked)):hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.seg-opt:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: -2px; }
+
+/* — cards — */
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface);
+}
+.card-kicker { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.card-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 17px; line-height: 1.2;
+}
+.card-body { margin: 0; font-size: 13px; opacity: 0.8; flex: 1; }
+.card-meta {
+  display: flex; align-items: center; gap: 6px; font-size: 11px;
+  color: color-mix(in srgb, var(--color-text) 50%, transparent);
+}
+.elev-sm { box-shadow: var(--shadow-sm); }
+.elev-md { box-shadow: var(--shadow-md); }
+.elev-lg { box-shadow: var(--shadow-lg); }
+
+/* — tags — */
+.tag {
+  display: inline-flex; align-items: center; font-size: 11px;
+  letter-spacing: 0.02em; padding: 3px 10px;
+  border-radius: calc(var(--radius-md) * 0.75);
+}
+.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
+.tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* — navigation — */
+.nav {
+  display: flex; align-items: center; gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: none;
+}
+.nav-brand {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 18px; margin-right: auto;
+}
+.nav a { color: inherit; text-decoration: none; font-size: 14px; }
+.nav a:hover, .nav a[aria-current='page'] { color: var(--color-accent); }
+
+/* — tables — */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th {
+  text-align: left; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  padding: var(--space-2); border-bottom: 1px solid var(--color-divider);
+}
+.table td {
+  padding: var(--space-2);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+.table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
+
+/* — dialog — */
+.dialog-backdrop {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  padding: var(--space-4);
+  background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent);
+}
+.dialog {
+  width: min(440px, 100%); display: flex; flex-direction: column; gap: var(--space-3);
+  padding: var(--space-4); border-radius: var(--radius-lg);
+  background: var(--color-surface); box-shadow: var(--shadow-lg);
+}
+.dialog-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 20px;
+}
+.dialog-body { font-size: 14px; opacity: 0.85; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
+
+/* — rounded frame: everything softens, small controls go pill — */
+.card, .dialog { border-radius: calc(var(--radius-lg) * 1.15); }
+.btn, .tag, .seg, .input { border-radius: 999px; }
+.input { padding-inline: 14px; }
+
+
+</style>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Cari's English">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#c67139">
+
+<style>
+  body { margin: 0; font-family: var(--font-body), "Noto Sans TC", sans-serif; }
+  h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading), "Noto Sans TC", sans-serif; }
+  a { color: var(--color-accent-700); }
+  a:hover { color: var(--color-accent); }
+  button, input { font-family: inherit; color: var(--color-text); -webkit-text-fill-color: currentColor; }
+  @keyframes om-pop { 0% { transform: translateY(6px) scale(.96); opacity: 0 } 100% { transform: none; opacity: 1 } }
+</style>
+</helmet>
+<div style="min-height: 100vh; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body), 'Noto Sans TC', sans-serif; padding-bottom: 40px">
+
+  <div class="nav" style="display: flex; align-items: center; justify-content: space-between; gap: var(--space-4) var(--space-6); padding: var(--space-4) var(--space-8); flex-wrap: wrap">
+    <div style="display: flex; align-items: center; gap: var(--space-4) var(--space-6); flex-wrap: wrap">
+    <div class="nav-brand" style="display: flex; align-items: center; gap: var(--space-2); margin-right: 0; font-family: var(--font-heading), 'Noto Sans TC', sans-serif; font-size: 20px; white-space: nowrap">
+      <img src="icons/icon.svg" alt="Cari's English" width="34" height="34" style="border-radius: 10px; box-shadow: var(--shadow-sm)">
+      <span>Cari's English</span>
+    </div>
+    <div style="display: flex; gap: var(--space-2); flex-wrap: nowrap; flex: 0 0 auto">
+      <sc-for list="{{ classTabs }}" as="c" hint-placeholder-count="3">
+        <button class="btn {{ c.btnClass }}" style="border-radius: 999px; font-size: 14px" onClick="{{ c.select }}">{{ c.label }}</button>
+      </sc-for>
+    </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: var(--space-3); font-size: 13px; flex-wrap: wrap">
+      <span class="text-muted">{{ todayLabel }}</span>
+      <button class="btn btn-secondary" style="border-radius: 999px; font-size: 13px; min-height: 44px" onClick="{{ undo }}">復原上一筆</button>
+      <button class="btn btn-primary" style="border-radius: 999px; font-size: 13px; min-height: 44px" onClick="{{ exportXlsx }}">匯出 Excel</button>
+      <button class="btn btn-secondary" style="border-radius: 999px; font-size: 13px; min-height: 44px" onClick="{{ exportCsv }}">匯出 CSV</button>
+      <button class="btn btn-secondary" style="border-radius: 999px; font-size: 13px; min-height: 44px" onClick="{{ openReset }}">段考結算歸零</button>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: var(--space-6); align-items: flex-start; padding: var(--space-6) var(--space-8); max-width: 1440px">
+
+    <div style="flex: 1; min-width: 0">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; margin-bottom: var(--space-4)">
+        <div>
+          <h1 style="font-size: 38px; margin: 0">{{ className }}</h1>
+          <div class="text-muted" style="font-size: 14px">{{ classSummary }}</div>
+        </div>
+        <div class="seg" style="display: inline-flex; gap: 4px; background: var(--color-surface); border-radius: 999px; padding: 4px">
+          <sc-for list="{{ viewTabs }}" as="v" hint-placeholder-count="3">
+            <button class="btn {{ v.btnClass }}" style="border-radius: 999px; font-size: 14px; padding: 6px 18px" onClick="{{ v.select }}">{{ v.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+
+      <sc-if value="{{ isSeat }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <sc-if value="{{ showGroupTotals }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-4)">
+              <sc-for list="{{ groupTotals }}" as="g" hint-placeholder-count="7">
+                <div style="background: var(--color-accent-2-100); border: 1px solid var(--color-accent-2-300); border-radius: 999px; padding: 6px 16px; font-size: 14px; display: flex; gap: 8px; align-items: baseline">
+                  <span style="font-family: var(--font-heading), 'Noto Sans TC', sans-serif">{{ g.name }}</span>
+                  <span style="color: var(--color-accent-2-800); font-weight: 700">{{ g.score }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <div class="card elev-sm" style="background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-6); margin-bottom: var(--space-4)">
+            <div style="display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap">
+              <span style="font-family: var(--font-heading), 'Noto Sans TC', sans-serif; font-size: 18px; white-space: nowrap">作業檢查</span>
+              <div style="display: flex; gap: 6px">
+                <sc-for list="{{ hwItems }}" as="i" hint-placeholder-count="4">
+                  <button class="btn {{ i.btnClass }}" style="border-radius: 999px; font-size: 14px; min-height: 44px" onClick="{{ i.select }}">{{ i.label }}</button>
+                </sc-for>
+              </div>
+              <input class="input" type="text" placeholder="頁數範圍，例 p.12–15" value="{{ hwPages }}" onChange="{{ setHwPages }}" style="border-radius: 999px; border: 1px solid var(--color-divider); background: var(--color-neutral-100); padding: 11px var(--space-4); font-size: 14px; min-height: 44px; width: 200px; font-family: inherit; color: var(--color-text)">
+              <sc-if value="{{ notChecking }}" hint-placeholder-val="{{ true }}">
+                <button class="btn btn-primary" style="border-radius: 999px; min-height: 44px" onClick="{{ startCheck }}">開始檢查</button>
+              </sc-if>
+              <sc-if value="{{ checking }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap">
+                  <span style="font-size: 14px">{{ checkCount }}</span>
+                  <button class="btn btn-primary" style="border-radius: 999px; min-height: 44px" onClick="{{ submitCheck }}">送出（完成 +1／未完成 -1）</button>
+                  <button class="btn btn-ghost" style="border-radius: 999px; min-height: 44px" onClick="{{ cancelCheck }}">取消</button>
+                </div>
+              </sc-if>
+            </div>
+            <sc-if value="{{ checking }}" hint-placeholder-val="{{ false }}">
+              <div class="text-muted" style="font-size: 13px; margin-top: var(--space-2)">點選已完成的學生，未點選者視為未完成。</div>
+            </sc-if>
+            <sc-for list="{{ pendingHw }}" as="p" hint-placeholder-count="0">
+              <div style="margin-top: var(--space-4); border-top: 1px solid var(--color-divider); padding-top: var(--space-3)">
+                <div style="font-size: 14px; margin-bottom: var(--space-2)">待補交 · {{ p.title }}<span class="text-muted">（{{ p.count }} 人）</span></div>
+                <div style="display: flex; flex-wrap: wrap; gap: var(--space-2)">
+                  <sc-for list="{{ p.students }}" as="st" hint-placeholder-count="3">
+                    <button onClick="{{ st.makeup }}" style="cursor: pointer; border: 1px solid var(--color-accent-300); background: var(--color-accent-100); color: var(--color-accent-900); border-radius: 999px; padding: 9px 15px; font-size: 14px; min-height: 44px" style-hover="background: var(--color-accent-200)">{{ st.label }} 補交 +1</button>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(158px, 1fr)); gap: var(--space-3)">
+            <sc-for list="{{ seats }}" as="s" hint-placeholder-count="28">
+              <button onClick="{{ s.tap }}" style="text-align: left; cursor: pointer; color: var(--color-text); background: {{ s.bg }}; border: 1px solid var(--color-divider); border-radius: var(--radius-md); padding: var(--space-3); display: flex; flex-direction: column; gap: 6px; min-height: 96px; box-shadow: {{ s.ring }}" style-hover="background: var(--color-neutral-200)">
+                <div style="display: flex; justify-content: space-between; align-items: center; gap: 6px">
+                  <span class="text-muted" style="font-size: 11px; letter-spacing: 0.06em">{{ s.no }} {{ s.mark }}</span>
+                  <span class="tag {{ s.tagClass }}" style="font-size: 13px; font-weight: 700">{{ s.deltaLabel }}</span>
+                </div>
+                <div style="font-family: var(--font-heading), 'Noto Sans TC', sans-serif; font-size: 17px; line-height: 1.2">{{ s.name }}</div>
+                <sc-if value="{{ showEnglishNames }}" hint-placeholder-val="{{ true }}">
+                  <div class="text-muted" style="font-size: 12px">{{ s.en }}</div>
+                </sc-if>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 6px; margin-top: auto">
+                  <span class="text-muted" style="font-size: 11px">起始 {{ s.base }}</span>
+                  <span style="font-family: var(--font-heading), 'Noto Sans TC', sans-serif; font-size: 22px; line-height: 1; color: {{ s.color }}">{{ s.current }}</span>
+                </div>
+              </button>
+            </sc-for>
+          </div>
+          <div class="text-muted" style="font-size: 12px; margin-top: var(--space-3)">{{ tapHint }}</div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isStats }}" hint-placeholder-val="{{ false }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4)">
+          <div class="card elev-sm" style="background: var(--color-neutral-100); border-radius: var(--radius-lg); padding: var(--space-6)">
+            <div class="card-kicker" style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700)">積分前十名</div>
+            <h3 style="font-size: 22px; margin: 4px 0 var(--space-4)">表現亮眼</h3>
+            <sc-for list="{{ topList }}" as="r" hint-placeholder-count="10">
+              <div style="display: flex; align-items: center; gap: var(--space-3); padding: 8px 0; border-bottom: 1px solid var(--color-divider)">
+                <span class="text-muted" style="font-size: 12px; width: 18px">{{ r.rank }}</span>
+                <span style="flex: 1; font-size: 15px">{{ r.name }}</span>
+                <span class="text-muted" style="font-size: 12px">{{ r.delta }}</span>
+                <span style="height: 8px; border-radius: 999px; background: var(--color-accent-2-400); width: {{ r.barWidth }}"></span>
+                <span style="font-weight: 700; color: var(--color-accent-2-800); width: 34px; text-align: right">{{ r.score }}</span>
+              </div>
+            </sc-for>
+          </div>
+
+          <div class="card elev-sm" style="background: var(--color-neutral-100); border-radius: var(--radius-lg); padding: var(--space-6)">
+            <div class="card-kicker" style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700)">需要關注</div>
+            <h3 style="font-size: 22px; margin: 4px 0 var(--space-4)">扣分較多前五位</h3>
+            <sc-for list="{{ watchList }}" as="r" hint-placeholder-count="5">
+              <div style="display: flex; align-items: baseline; gap: var(--space-3); padding: 8px 0; border-bottom: 1px solid var(--color-divider)">
+                <div style="flex: 1">
+                  <div style="font-size: 15px">{{ r.name }}</div>
+                  <div class="text-muted" style="font-size: 12px">{{ r.detail }}</div>
+                </div>
+                <span style="font-weight: 700; color: var(--color-accent-700); width: 34px; text-align: right">{{ r.score }}</span>
+              </div>
+            </sc-for>
+            <sc-if value="{{ noWatch }}" hint-placeholder-val="{{ false }}">
+              <div class="text-muted" style="font-size: 13px">目前沒有扣分紀錄。</div>
+            </sc-if>
+          </div>
+
+          <div class="card elev-sm" style="background: var(--color-neutral-100); border-radius: var(--radius-lg); padding: var(--space-6)">
+            <div class="card-kicker" style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700)">原因統計</div>
+            <h3 style="font-size: 22px; margin: 4px 0 var(--space-4)">這個班最常發生</h3>
+            <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-2-700); margin-bottom: 4px">最常加分</div>
+            <sc-for list="{{ plusStats }}" as="r" hint-placeholder-count="5">
+              <div style="display: flex; align-items: center; gap: var(--space-3); padding: 7px 0">
+                <span style="flex: 1; font-size: 14px">{{ r.label }}</span>
+                <span style="height: 8px; border-radius: 999px; background: var(--color-accent-2-400); width: {{ r.barWidth }}"></span>
+                <span class="text-muted" style="font-size: 13px; width: 40px; text-align: right">{{ r.count }} 次</span>
+              </div>
+            </sc-for>
+            <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700); margin: var(--space-4) 0 4px">最常扣分</div>
+            <sc-for list="{{ minusStats }}" as="r" hint-placeholder-count="5">
+              <div style="display: flex; align-items: center; gap: var(--space-3); padding: 7px 0">
+                <span style="flex: 1; font-size: 14px">{{ r.label }}</span>
+                <span style="height: 8px; border-radius: 999px; background: var(--color-accent-400); width: {{ r.barWidth }}"></span>
+                <span class="text-muted" style="font-size: 13px; width: 40px; text-align: right">{{ r.count }} 次</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isLog }}" hint-placeholder-val="{{ false }}">
+        <div class="card elev-sm" style="background: var(--color-neutral-100); border-radius: var(--radius-lg); padding: var(--space-6); overflow: auto">
+          <table class="table" style="width: 100%; border-collapse: collapse; font-size: 14px">
+            <thead>
+              <tr>
+                <th style="text-align: left; padding: 10px 8px">時間</th>
+                <th style="text-align: left; padding: 10px 8px">學生</th>
+                <th style="text-align: left; padding: 10px 8px">原因</th>
+                <th style="text-align: right; padding: 10px 8px">分數</th>
+                <th style="padding: 10px 8px"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <sc-for list="{{ logRows }}" as="l" hint-placeholder-count="8">
+                <tr>
+                  <td class="text-muted" style="padding: 10px 8px; white-space: nowrap">{{ l.time }}</td>
+                  <td style="padding: 10px 8px">{{ l.student }}</td>
+                  <td style="padding: 10px 8px">{{ l.reason }}</td>
+                  <td style="padding: 10px 8px; text-align: right; font-weight: 700; color: {{ l.color }}">{{ l.delta }}</td>
+                  <td style="padding: 10px 8px; text-align: right"><button class="btn btn-ghost" style="font-size: 12px; border-radius: 999px" onClick="{{ l.remove }}">撤銷</button></td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+          <div class="text-muted" style="font-size: 12px; margin-top: var(--space-4)">只顯示這個班最近 40 筆紀錄，完整資料請用「匯出 Excel」。</div>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="width: 344px; flex: 0 0 344px; position: sticky; top: var(--space-4)">
+      <sc-if value="{{ hasSelected }}" hint-placeholder-val="{{ true }}">
+        <div class="card elev-md" style="background: var(--color-neutral-100); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-md)">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-3)">
+            <div>
+              <h2 style="font-size: 28px; margin: 0">{{ sel.name }}</h2>
+              <div class="text-muted" style="font-size: 13px">{{ sel.meta }}</div>
+            </div>
+            <button class="btn btn-ghost" style="border-radius: 999px; font-size: 13px" onClick="{{ clearSelection }}">關閉</button>
+          </div>
+
+          <div style="display: flex; align-items: baseline; gap: var(--space-2); margin: var(--space-4) 0">
+            <span style="font-family: var(--font-heading), 'Noto Sans TC', sans-serif; font-size: 52px; line-height: 1; color: {{ sel.color }}">{{ sel.currentLabel }}</span>
+            <span class="text-muted" style="font-size: 13px">{{ sel.breakdown }}</span>
+          </div>
+
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-2-700); margin-bottom: var(--space-2)">加分</div>
+          <div style="display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4)">
+            <sc-for list="{{ plusReasons }}" as="r" hint-placeholder-count="5">
+              <button onClick="{{ r.apply }}" style="cursor: pointer; border: 1px solid var(--color-accent-2-300); background: var(--color-accent-2-100); color: var(--color-accent-2-900); border-radius: 999px; padding: 9px 15px; font-size: 14px; min-height: 44px" style-hover="background: var(--color-accent-2-200)">{{ r.label }}</button>
+            </sc-for>
+          </div>
+
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: var(--space-2)">扣分</div>
+          <div style="display: flex; flex-wrap: wrap; gap: var(--space-2)">
+            <sc-for list="{{ minusReasons }}" as="r" hint-placeholder-count="5">
+              <button onClick="{{ r.apply }}" style="cursor: pointer; border: 1px solid var(--color-accent-300); background: var(--color-accent-100); color: var(--color-accent-900); border-radius: 999px; padding: 9px 15px; font-size: 14px; min-height: 44px" style-hover="background: var(--color-accent-200)">{{ r.label }}</button>
+            </sc-for>
+          </div>
+
+          <div class="hr" style="height: 1px; border: 0; background: var(--color-divider); margin: var(--space-6) 0 var(--space-4)"></div>
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral-700); margin-bottom: var(--space-2)">本次段考統計</div>
+          <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-4)">
+            <sc-for list="{{ sel.summary }}" as="m" hint-placeholder-count="4">
+              <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: 8px 12px; min-width: 74px">
+                <div class="text-muted" style="font-size: 11px">{{ m.label }}</div>
+                <div style="font-family: var(--font-heading), 'Noto Sans TC', sans-serif; font-size: 20px; line-height: 1.1; color: {{ m.color }}">{{ m.value }}</div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral-700); margin-bottom: var(--space-2)">作業繳交明細</div>
+          <sc-for list="{{ sel.homework }}" as="h" hint-placeholder-count="3">
+            <div style="display: flex; gap: var(--space-3); align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--color-divider); font-size: 13px">
+              <span style="flex: 1">{{ h.title }}</span>
+              <span class="tag {{ h.tagClass }}" style="font-size: 12px">{{ h.status }}</span>
+              <span style="font-weight: 700; color: {{ h.color }}; width: 26px; text-align: right">{{ h.delta }}</span>
+            </div>
+          </sc-for>
+          <sc-if value="{{ sel.noHomework }}" hint-placeholder-val="{{ false }}">
+            <div class="text-muted" style="font-size: 13px">這次段考還沒有作業檢查紀錄。</div>
+          </sc-if>
+
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral-700); margin: var(--space-4) 0 var(--space-2)">加扣分明細</div>
+          <sc-for list="{{ sel.reasonBreakdown }}" as="b" hint-placeholder-count="4">
+            <div style="display: flex; gap: var(--space-3); align-items: baseline; padding: 5px 0; font-size: 13px">
+              <span style="flex: 1">{{ b.label }}</span>
+              <span class="text-muted" style="font-size: 12px">{{ b.count }} 次</span>
+              <span style="font-weight: 700; color: {{ b.color }}; width: 30px; text-align: right">{{ b.total }}</span>
+            </div>
+          </sc-for>
+
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral-700); margin: var(--space-4) 0 var(--space-2)">最近紀錄</div>
+          <sc-for list="{{ sel.history }}" as="h" hint-placeholder-count="4">
+            <div style="display: flex; gap: var(--space-3); align-items: baseline; padding: 5px 0; font-size: 13px">
+              <span class="text-muted" style="width: 44px">{{ h.time }}</span>
+              <span style="flex: 1">{{ h.reason }}</span>
+              <span style="font-weight: 700; color: {{ h.color }}">{{ h.delta }}</span>
+            </div>
+          </sc-for>
+          <sc-if value="{{ sel.empty }}" hint-placeholder-val="{{ false }}">
+            <div class="text-muted" style="font-size: 13px">這位同學還沒有紀錄。</div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ noSelected }}" hint-placeholder-val="{{ false }}">
+        <div class="card elev-sm" style="background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-6)">
+          <h3 style="font-size: 22px; margin: 0 0 var(--space-2)">今日課堂</h3>
+          <div class="text-muted" style="font-size: 14px; margin-bottom: var(--space-4)">點座位卡片就能加扣分。</div>
+          <div style="display: grid; gap: var(--space-3)">
+            <sc-for list="{{ todayStats }}" as="t" hint-placeholder-count="3">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--color-divider); padding-bottom: 8px">
+                <span style="font-size: 14px">{{ t.label }}</span>
+                <span style="font-family: var(--font-heading), 'Noto Sans TC', sans-serif; font-size: 22px">{{ t.value }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ resetOpen }}" hint-placeholder-val="{{ false }}">
+        <div class="dialog-backdrop" style="position: fixed; inset: 0; background: color-mix(in srgb, var(--color-neutral-900) 45%, transparent); display: flex; align-items: center; justify-content: center; padding: var(--space-6); z-index: 50">
+          <div class="dialog" style="background: var(--color-neutral-100); border-radius: var(--radius-lg); padding: var(--space-8); max-width: 460px; box-shadow: var(--shadow-lg)">
+            <h2 class="dialog-title" style="font-size: 28px; margin: 0 0 var(--space-3)">段考結算歸零</h2>
+            <p class="dialog-body" style="font-size: 15px; margin: 0 0 var(--space-4)">所有學生分數歸零、紀錄清空，無法復原。建議先按「匯出 Excel」留存這次段考的資料。</p>
+            <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+              <button class="btn btn-primary" style="border-radius: 999px; min-height: 48px" onClick="{{ resetClass }}">{{ resetClassLabel }}</button>
+              <button class="btn btn-secondary" style="border-radius: 999px; min-height: 48px" onClick="{{ resetAll }}">清空全部班級（805 / 814 / 819）</button>
+              <button class="btn btn-ghost" style="border-radius: 999px; min-height: 48px" onClick="{{ closeReset }}">取消</button>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <template id="__bundler_thumbnail">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <rect width="100" height="100" fill="#f5ead8"/>
+          <g transform="translate(30 30) scale(0.3333)">
+            <rect width="120" height="120" rx="27" fill="#012169"/>
+            <g stroke="#ffffff" stroke-width="22"><path d="M0 0 L120 120"/><path d="M120 0 L0 120"/></g>
+            <g stroke="#c8102e" stroke-width="9"><path d="M0 0 L120 120"/><path d="M120 0 L0 120"/></g>
+            <g stroke="#ffffff" stroke-width="36"><path d="M60 0 L60 120"/><path d="M0 60 L120 60"/></g>
+            <g stroke="#c8102e" stroke-width="21"><path d="M60 0 L60 120"/><path d="M0 60 L120 60"/></g>
+          </g>
+        </svg>
+      </template>
+
+      <sc-if value="{{ hasToast }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top: var(--space-3); background: var(--color-accent-900); color: var(--color-neutral-100); border-radius: 999px; padding: 11px 20px; font-size: 14px; box-shadow: var(--shadow-md); animation: om-pop .18s ease-out">{{ toast }}</div>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showEnglishNames&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;課堂設定&quot;},&quot;showGroupTotals&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;課堂設定&quot;},&quot;oneTapPlus&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;課堂設定&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = this.load() || this.seed();
+    this.state.selected = null;
+    this.state.view = "seat";
+    this.state.toast = "";
+  }
+
+  reasons() {
+    return [
+      { id: "speak", label: "主動發表 +2", delta: 2 },
+      { id: "practice", label: "認真練習 +1", delta: 1 },
+      { id: "hw", label: "完成作業 +1", delta: 1 },
+      { id: "fix", label: "完成訂正 +1", delta: 1 },
+      { id: "help", label: "幫助同學 +1", delta: 1 },
+      { id: "talk", label: "講話 -1", delta: -1 },
+      { id: "offtask", label: "做其他事 -1", delta: -1 },
+      { id: "rude", label: "不當言語 -2", delta: -2 },
+      { id: "nohw", label: "未寫作業 -1", delta: -1 },
+      { id: "nofix", label: "未訂正 -1", delta: -1 },
+      { id: "nobook", label: "未帶課本 -1", delta: -1 }
+    ];
+  }
+
+  seed() {
+    const rosters = {
+      c805: { name: "805", list: "1 王舜燦|2 吳柏軒|4 莊維治|5 范姜士凱|6 張騰予|7 梁庭睿|8 許竣飛|9 陳昱辰|10 陳羿均|11 彭飛樊|12 曾裕承|13 黃崧騏|14 劉哲宇|15 歐柏辰|16 謝文強|19 林語慈|20 邱品慈|21 施宥妍|22 徐宜佳|23 翁妤熙|26 傅奕晴|27 管婕彤|28 劉品妍|29 蔡依臻|30 盧采維" },
+      c814: { name: "814", list: "1 孔佑中 Dino|2 方凱謙 Ryan|3 江允翔 Kevin|4 江宗融 Sky|5 吳宜鍇 Robert|6 吳杰澄 Jackson|7 李易顯 Eason|8 郭品陞 Miller|9 林奕佐 Fred|10 范宥騫 Vic|11 溫建勛 Chris|12 劉昱翔 Ethan Liu|13 潘品僑 Carl|14 潘楷學 Ethan Pan|15 盧仕愷 Sky|16 謝又新 Louie|17 王品媃 Zoe Wang|18 王晨詠 Emily|19 江玥彤 Una|20 江宥橙 Claire|21 何紹萌 Molly|22 吳苡瑄 Evelyn Wu|23 周于甯 Cumie|24 田曜瑆 Anita|25 張芷榕 Bonnie|26 郭羽軒 Shelly|27 陳映菱 Evelyn Chen|28 陳穎瑩 Elsa|29 陳曦 Xixi" },
+      c819: { name: "819", list: "1 成書維|2 王碩甫 Wilson|3 古昱安 Gordon|4 何奇恩 Charles|5 林彤霖 Tony|6 林宸睿 Ryan Lin|7 姜竣期 Jasper|8 施子謙 Phawin|9 徐振瑋 Steven|10 莊雅睿 Ray|11 許洸毓 Bentley|12 彭玟睿 Ryan Peng|13 賈慶駿 Jason|14 劉品杰 Morris|15 蔡尚恩 Shawn|16 謝岷叡 Owen|17 李晨語 Zoe|19 張聿箮 Sandy|20 郭沛禹 Emily|22 黃璦星 Zoey|23 楊采妮 Nicole|24 楊葆寶 Cindy|25 劉品彤 Kelsey|26 潘宥霏 Phoebe|27 蔡昀蓁 Sunny|28 謝沛恩 Nina|29 鍾采縈 Vica|30 蘇羽婕 Ada" }
+    };
+    const classes = Object.keys(rosters).map(id => ({
+      id, name: rosters[id].name,
+      students: rosters[id].list.split("|").map(entry => {
+        const sp = entry.indexOf(" ");
+        const no = entry.slice(0, sp);
+        const rest = entry.slice(sp + 1).trim();
+        const m = rest.match(/^([^A-Za-z]+)\s*(.*)$/);
+        return { id: id + "-" + no, no: no.padStart(2, "0"), name: (m ? m[1] : rest).trim(), en: m && m[2] ? m[2].trim() : "", score: 0 };
+      })
+    }));
+    return { classes, logs: [], activeClass: "c805" };
+  }
+
+  load() {
+    try {
+      const raw = localStorage.getItem("eng-points-v4");
+      if (!raw) return null;
+      const d = JSON.parse(raw);
+      return d && d.classes ? d : null;
+    } catch (e) { return null; }
+  }
+
+  save(st) {
+    try {
+      localStorage.setItem("eng-points-v4", JSON.stringify({ classes: st.classes, logs: st.logs, activeClass: st.activeClass, homeworks: st.homeworks || [] }));
+    } catch (e) {}
+  }
+
+  update(fn) {
+    this.setState(s => {
+      const next = fn(s) || {};
+      const merged = Object.assign({}, s, next);
+      this.save(merged);
+      return next;
+    });
+  }
+
+  activeCls(s) { const st = s || this.state; return st.classes.find(c => c.id === st.activeClass) || st.classes[0]; }
+
+  flash(msg) {
+    clearTimeout(this._t);
+    this.setState({ toast: msg });
+    this._t = setTimeout(() => this.setState({ toast: "" }), 1900);
+  }
+
+  apply(studentId, reason) {
+    this.update(s => {
+      const classes = s.classes.map(c => c.id !== s.activeClass ? c : Object.assign({}, c, {
+        students: c.students.map(st => st.id === studentId ? Object.assign({}, st, { score: st.score + reason.delta }) : st)
+      }));
+      const cls = classes.find(c => c.id === s.activeClass);
+      const stu = cls.students.find(x => x.id === studentId);
+      const logs = s.logs.concat([{ id: "l" + Date.now() + Math.random().toString(36).slice(2, 6), classId: s.activeClass, studentId, student: stu.name, reason: reason.label, delta: reason.delta, at: Date.now() }]);
+      this.flash(stu.name + "：" + reason.label);
+      return { classes, logs };
+    });
+  }
+
+  revert(logId) {
+    this.update(s => {
+      const entry = s.logs.find(l => l.id === logId);
+      if (!entry) return {};
+      const classes = s.classes.map(c => c.id !== entry.classId ? c : Object.assign({}, c, {
+        students: c.students.map(st => st.id === entry.studentId ? Object.assign({}, st, { score: st.score - entry.delta }) : st)
+      }));
+      this.flash("已撤銷：" + entry.student + " " + entry.reason);
+      return { classes, logs: s.logs.filter(l => l.id !== logId) };
+    });
+  }
+
+  undoLast() {
+    const mine = this.state.logs.filter(l => l.classId === this.state.activeClass);
+    if (!mine.length) { this.flash("這個班沒有可復原的紀錄"); return; }
+    this.revert(mine[mine.length - 1].id);
+  }
+
+  hwTitle(item, pages) { return "作業：" + item + (pages ? " " + pages : ""); }
+
+  startCheck() {
+    this.setState({ checking: true, picked: {}, selected: null });
+  }
+
+  submitCheck() {
+    const item = this.state.hwItem || "課本";
+    const pages = (this.state.hwPages || "").trim();
+    const title = this.hwTitle(item, pages);
+    this.update(s => {
+      const cls = this.activeCls(s);
+      const picked = s.picked || {};
+      const now = Date.now();
+      const logs = s.logs.slice();
+      const pending = [];
+      const classes = s.classes.map(c => c.id !== cls.id ? c : Object.assign({}, c, {
+        students: c.students.map(st => {
+          const done = !!picked[st.id];
+          if (!done) pending.push(st.id);
+          logs.push({
+            id: "hw" + now + st.id, classId: c.id, studentId: st.id, student: st.name,
+            reason: title + (done ? " 完成 +1" : " 未完成 -1"), delta: done ? 1 : -1, at: now
+          });
+          return Object.assign({}, st, { score: st.score + (done ? 1 : -1) });
+        })
+      }));
+      const homeworks = (s.homeworks || []).concat([{ id: "a" + now, classId: cls.id, title, at: now, pending }]);
+      this.flash(title + "：完成 " + (cls.students.length - pending.length) + " 人，未完成 " + pending.length + " 人");
+      return { classes, logs, homeworks, checking: false, picked: {}, hwPages: "" };
+    });
+  }
+
+  makeup(hwId, studentId) {
+    this.update(s => {
+      const hw = (s.homeworks || []).find(h => h.id === hwId);
+      if (!hw) return {};
+      const classes = s.classes.map(c => c.id !== hw.classId ? c : Object.assign({}, c, {
+        students: c.students.map(st => st.id === studentId ? Object.assign({}, st, { score: st.score + 1 }) : st)
+      }));
+      const cls = classes.find(c => c.id === hw.classId);
+      const stu = cls.students.find(x => x.id === studentId);
+      const logs = s.logs.concat([{ id: "mk" + Date.now() + studentId, classId: hw.classId, studentId, student: stu.name, reason: hw.title + " 補交 +1", delta: 1, at: Date.now() }]);
+      const homeworks = s.homeworks.map(h => h.id !== hwId ? h : Object.assign({}, h, { pending: h.pending.filter(id => id !== studentId) }));
+      this.flash(stu.name + " 已補交 " + hw.title);
+      return { classes, logs, homeworks };
+    });
+  }
+
+  reset(scope) {
+    this.update(s => {
+      const hit = c => scope === "all" || c.id === s.activeClass;
+      const classes = s.classes.map(c => !hit(c) ? c : Object.assign({}, c, {
+        students: c.students.map(st => Object.assign({}, st, { score: 0 }))
+      }));
+      this.flash(scope === "all" ? "已清空全部班級紀錄" : "已清空 " + this.activeCls(s).name + " 的紀錄");
+      return {
+        classes,
+        logs: scope === "all" ? [] : s.logs.filter(l => l.classId !== s.activeClass),
+        homeworks: scope === "all" ? [] : (s.homeworks || []).filter(h => h.classId !== s.activeClass),
+        selected: null, resetOpen: false
+      };
+    });
+  }
+
+  zipStore(files) {
+    const enc = new TextEncoder();
+    const tbl = [];
+    for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1; tbl[n] = c >>> 0; }
+    const crc32 = b => { let c = 0xffffffff; for (let i = 0; i < b.length; i++) c = tbl[(c ^ b[i]) & 0xff] ^ (c >>> 8); return (c ^ 0xffffffff) >>> 0; };
+    const parts = [], central = [];
+    let offset = 0;
+    files.forEach(f => {
+      const name = enc.encode(f.name), data = enc.encode(f.data), crc = crc32(data);
+      const lh = new DataView(new ArrayBuffer(30));
+      lh.setUint32(0, 0x04034b50, true); lh.setUint16(4, 20, true); lh.setUint16(6, 0x0800, true);
+      lh.setUint16(8, 0, true); lh.setUint32(14, crc, true);
+      lh.setUint32(18, data.length, true); lh.setUint32(22, data.length, true);
+      lh.setUint16(26, name.length, true);
+      parts.push(new Uint8Array(lh.buffer), name, data);
+      const cd = new DataView(new ArrayBuffer(46));
+      cd.setUint32(0, 0x02014b50, true); cd.setUint16(4, 20, true); cd.setUint16(6, 20, true);
+      cd.setUint16(8, 0x0800, true); cd.setUint16(10, 0, true); cd.setUint32(16, crc, true);
+      cd.setUint32(20, data.length, true); cd.setUint32(24, data.length, true);
+      cd.setUint16(28, name.length, true); cd.setUint32(42, offset, true);
+      central.push(new Uint8Array(cd.buffer), name);
+      offset += 30 + name.length + data.length;
+    });
+    const cdSize = central.reduce((a, b) => a + b.length, 0);
+    const eo = new DataView(new ArrayBuffer(22));
+    eo.setUint32(0, 0x06054b50, true);
+    eo.setUint16(8, files.length, true); eo.setUint16(10, files.length, true);
+    eo.setUint32(12, cdSize, true); eo.setUint32(16, offset, true);
+    return new Blob(parts.concat(central, [new Uint8Array(eo.buffer)]), { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+  }
+
+  sheetXml(rows) {
+    const esc = v => String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    const col = i => { let s = "", n = i; do { s = String.fromCharCode(65 + (n % 26)) + s; n = Math.floor(n / 26) - 1; } while (n >= 0); return s; };
+    const body = rows.map((r, ri) => "<row r=\"" + (ri + 1) + "\">" + r.map((c, ci) => {
+      const ref = col(ci) + (ri + 1);
+      if (typeof c === "number") return "<c r=\"" + ref + "\"><v>" + c + "</v></c>";
+      if (c === "" || c == null) return "";
+      return "<c r=\"" + ref + "\" t=\"inlineStr\"><is><t>" + esc(c) + "</t></is></c>";
+    }).join("") + "</row>").join("");
+    return "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData>" + body + "</sheetData></worksheet>";
+  }
+
+  exportXlsx() {
+    const s = this.state, base = 80;
+    const cls = this.activeCls(s);
+    const logs = s.logs.filter(l => l.classId === cls.id);
+    const summary = [["座號", "姓名", "English Name", "起始分數", "加扣分", "學習態度分數", "加分次數", "扣分次數"]].concat(
+      cls.students.map(st => {
+        const mine = logs.filter(l => l.studentId === st.id);
+        return [st.no, st.name, st.en, base, st.score, base + st.score, mine.filter(l => l.delta > 0).length, mine.filter(l => l.delta < 0).length];
+      })
+    );
+    const detail = [["時間", "座號", "姓名", "原因", "分數"]].concat(logs.slice().reverse().map(l => {
+      const st = cls.students.find(x => x.id === l.studentId) || {};
+      return [new Date(l.at).toLocaleString("zh-TW"), st.no || "", l.student, l.reason, l.delta];
+    }));
+    const ct = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><Types xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\"><Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/><Default Extension=\"xml\" ContentType=\"application/xml\"/><Override PartName=\"/xl/workbook.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml\"/><Override PartName=\"/xl/worksheets/sheet1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet2.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/></Types>";
+    const rels = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument\" Target=\"xl/workbook.xml\"/></Relationships>";
+    const wb = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><workbook xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"><sheets><sheet name=\"" + cls.name + "總表\" sheetId=\"1\" r:id=\"rId1\"/><sheet name=\"加扣分明細\" sheetId=\"2\" r:id=\"rId2\"/></sheets></workbook>";
+    const wbRels = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet1.xml\"/><Relationship Id=\"rId2\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet2.xml\"/></Relationships>";
+    const blob = this.zipStore([
+      { name: "[Content_Types].xml", data: ct },
+      { name: "_rels/.rels", data: rels },
+      { name: "xl/workbook.xml", data: wb },
+      { name: "xl/_rels/workbook.xml.rels", data: wbRels },
+      { name: "xl/worksheets/sheet1.xml", data: this.sheetXml(summary) },
+      { name: "xl/worksheets/sheet2.xml", data: this.sheetXml(detail) }
+    ]);
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = cls.name + "_英文學習態度_" + new Date().toISOString().slice(0, 10) + ".xlsx";
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    this.flash("已匯出 " + cls.name + " Excel");
+  }
+
+  exportCsv() {
+    const s = this.state;
+    const cls = this.activeCls(s);
+    const logs = s.logs.filter(l => l.classId === cls.id);
+    const head = "座號,姓名,English Name,起始分數,加扣分,學習態度分數,加分次數,扣分次數\n";
+    const body = cls.students.map(st => {
+      const mine = logs.filter(l => l.studentId === st.id);
+      return [st.no, st.name, st.en, 80, st.score, 80 + st.score, mine.filter(l => l.delta > 0).length, mine.filter(l => l.delta < 0).length].join(",");
+    }).join("\n");
+    const detail = "\n\n時間,座號,姓名,原因,分數\n" + logs.map(l => {
+      const st = cls.students.find(x => x.id === l.studentId) || {};
+      return [new Date(l.at).toLocaleString("zh-TW"), st.no || "", l.student, l.reason, l.delta].join(",");
+    }).join("\n");
+    const blob = new Blob(["\ufeff" + head + body + detail], { type: "text/csv;charset=utf-8" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = cls.name + "_英文加扣分_" + new Date().toISOString().slice(0, 10) + ".csv";
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    this.flash("已匯出 " + cls.name + " CSV");
+  }
+
+  time(ms) {
+    const d = new Date(ms);
+    return String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+  }
+
+  renderVals() {
+    const s = this.state;
+    const rs = this.reasons();
+    const cls = this.activeCls(s);
+    const showEnglishNames = this.props.showEnglishNames ?? true;
+    const showGroupTotals = this.props.showGroupTotals ?? false;
+    const oneTapPlus = this.props.oneTapPlus ?? false;
+    const posColor = "var(--color-accent-2-800)", negColor = "var(--color-accent-700)", zeroColor = "var(--color-neutral-700)";
+    const label = n => (n > 0 ? "+" + n : String(n));
+    const clsLogs = s.logs.filter(l => l.classId === cls.id);
+
+    const base = 80;
+    const picked = s.picked || {};
+    const seats = cls.students.map(st => ({
+      no: st.no, name: st.name, en: st.en,
+      base, current: base + st.score,
+      deltaLabel: label(st.score),
+      color: st.score > 0 ? posColor : st.score < 0 ? negColor : zeroColor,
+      tagClass: st.score > 0 ? "tag-accent-2" : st.score < 0 ? "tag-accent" : "tag-neutral",
+      ring: s.selected === st.id ? "0 0 0 3px var(--color-accent)" : "var(--shadow-sm)",
+      mark: s.checking ? (picked[st.id] ? "✓" : "—") : "",
+      bg: s.checking && picked[st.id] ? "var(--color-accent-2-200)" : "var(--color-neutral-100)",
+      tap: () => {
+        if (s.checking) {
+          this.setState(prev => {
+            const p = Object.assign({}, prev.picked);
+            if (p[st.id]) delete p[st.id]; else p[st.id] = true;
+            return { picked: p };
+          });
+        } else if (oneTapPlus) { this.apply(st.id, rs[0]); this.setState({ selected: st.id }); }
+        else this.setState({ selected: s.selected === st.id ? null : st.id });
+      }
+    }));
+
+    const selStu = cls.students.find(x => x.id === s.selected);
+    const hist = selStu ? clsLogs.filter(l => l.studentId === selStu.id).slice(-6).reverse() : [];
+    const sel = selStu ? {
+      name: selStu.name,
+      meta: ["座號 " + selStu.no, selStu.en, cls.name].filter(Boolean).join(" · "),
+      currentLabel: String(base + selStu.score),
+      breakdown: "起始 " + base + " 分 · 加扣分 " + label(selStu.score),
+      color: selStu.score > 0 ? posColor : selStu.score < 0 ? negColor : zeroColor,
+      empty: hist.length === 0,
+      history: hist.map(l => ({ time: this.time(l.at), reason: l.reason, delta: label(l.delta), color: l.delta > 0 ? posColor : negColor })),
+      summary: (() => {
+        const mine = clsLogs.filter(l => l.studentId === selStu.id);
+        const plus = mine.filter(l => l.delta > 0).reduce((a, b) => a + b.delta, 0);
+        const minus = mine.filter(l => l.delta < 0).reduce((a, b) => a + b.delta, 0);
+        return [
+          { label: "加分", value: label(plus), color: posColor },
+          { label: "扣分", value: minus ? label(minus) : "0", color: minus ? negColor : zeroColor },
+          { label: "紀錄", value: mine.length, color: "var(--color-text)" },
+          { label: "目前", value: base + selStu.score, color: selStu.score >= 0 ? posColor : negColor }
+        ];
+      })(),
+      homework: (s.homeworks || []).filter(h => h.classId === cls.id).slice().reverse().map(h => {
+        const pending = h.pending.indexOf(selStu.id) > -1;
+        const madeUp = clsLogs.some(l => l.studentId === selStu.id && l.reason === h.title + " 補交 +1");
+        const done = clsLogs.some(l => l.studentId === selStu.id && l.reason === h.title + " 完成 +1");
+        return {
+          title: h.title.replace(/^作業：/, ""),
+          status: done ? "已完成" : madeUp ? "已補交" : pending ? "未完成" : "—",
+          tagClass: done || madeUp ? "tag-accent-2" : pending ? "tag-accent" : "tag-neutral",
+          delta: label(done ? 1 : madeUp ? 0 : -1),
+          color: done || madeUp ? posColor : negColor
+        };
+      }),
+      noHomework: !(s.homeworks || []).some(h => h.classId === cls.id),
+      reasonBreakdown: (() => {
+        const mine = clsLogs.filter(l => l.studentId === selStu.id);
+        const g = {};
+        mine.forEach(l => {
+          const k = l.reason;
+          g[k] = g[k] || { count: 0, total: 0, delta: l.delta };
+          g[k].count++; g[k].total += l.delta;
+        });
+        return Object.keys(g).sort((a, b) => g[b].count - g[a].count).map(k => ({
+          label: k.replace(/^作業：/, ""), count: g[k].count,
+          total: label(g[k].total), color: g[k].total > 0 ? posColor : negColor
+        }));
+      })()
+    } : { history: [], summary: [], homework: [], reasonBreakdown: [] };
+
+    const sorted = cls.students.slice().sort((a, b) => b.score - a.score);
+    const max = Math.max(1, ...cls.students.map(x => Math.abs(x.score)));
+    const today = new Date().toDateString();
+    const todays = clsLogs.filter(l => new Date(l.at).toDateString() === today);
+
+    return {
+      showEnglishNames, showGroupTotals, seats, sel,
+      hasSelected: !!selStu, noSelected: !selStu,
+      clearSelection: () => this.setState({ selected: null }),
+      className: cls.name,
+      classSummary: cls.students.length + " 人 · 學習態度起始 " + base + " 分 · 班平均 " + (base + cls.students.reduce((a, b) => a + b.score, 0) / cls.students.length).toFixed(1) + " 分 · 紀錄 " + clsLogs.length + " 筆",
+      todayLabel: new Date().toLocaleDateString("zh-TW", { month: "long", day: "numeric", weekday: "short" }),
+      tapHint: oneTapPlus ? "快速模式：點一下座位直接記「主動發言 +2」，右側面板可改其他原因。" : "點座位卡片開啟右側面板，再選加扣分原因。",
+      classTabs: s.classes.map(c => ({
+        label: c.name, btnClass: c.id === s.activeClass ? "btn-primary" : "btn-secondary",
+        select: () => this.update(() => ({ activeClass: c.id, selected: null }))
+      })),
+      viewTabs: [["seat", "課堂"], ["stats", "統計"], ["log", "紀錄"]].map(([id, lb]) => ({
+        label: lb, btnClass: s.view === id ? "btn-primary" : "btn-ghost",
+        select: () => this.setState({ view: id })
+      })),
+      isSeat: s.view === "seat", isStats: s.view === "stats", isLog: s.view === "log",
+      plusReasons: rs.filter(r => r.delta > 0).sort((a, b) => b.delta - a.delta).map(r => ({ label: r.label, apply: () => selStu && this.apply(selStu.id, r) })),
+      minusReasons: rs.filter(r => r.delta < 0).sort((a, b) => a.delta - b.delta).map(r => ({ label: r.label, apply: () => selStu && this.apply(selStu.id, r) })),
+      undo: () => this.undoLast(),
+      exportCsv: () => this.exportCsv(),
+      exportXlsx: () => this.exportXlsx(),
+      hwItems: ["課本", "講義", "學習單", "訂正"].map(it => ({
+        label: it, btnClass: (s.hwItem || "課本") === it ? "btn-primary" : "btn-secondary",
+        select: () => this.setState({ hwItem: it })
+      })),
+      hwPages: s.hwPages || "",
+      setHwPages: e => this.setState({ hwPages: e.target.value }),
+      checking: !!s.checking, notChecking: !s.checking,
+      startCheck: () => this.startCheck(),
+      cancelCheck: () => this.setState({ checking: false, picked: {} }),
+      submitCheck: () => this.submitCheck(),
+      checkCount: "已點選 " + Object.keys(picked).length + " / " + cls.students.length + " 人",
+      pendingHw: (s.homeworks || []).filter(h => h.classId === cls.id && h.pending.length).slice(-3).reverse().map(h => ({
+        title: h.title, count: h.pending.length,
+        students: h.pending.map(id => {
+          const st = cls.students.find(x => x.id === id) || { no: "", name: "" };
+          return { label: st.no + " " + st.name, makeup: () => this.makeup(h.id, id) };
+        })
+      })),
+      resetOpen: !!s.resetOpen,
+      openReset: () => this.setState({ resetOpen: true }),
+      closeReset: () => this.setState({ resetOpen: false }),
+      resetClassLabel: "只清空 " + cls.name + "（" + cls.students.length + " 人）",
+      resetClass: () => this.reset("class"),
+      resetAll: () => this.reset("all"),
+      toast: s.toast, hasToast: !!s.toast,
+      groupTotals: Array.from({ length: Math.ceil(cls.students.length / 4) }, (_, gi) => ({
+        name: "第 " + (gi + 1) + " 組",
+        score: label(cls.students.slice(gi * 4, gi * 4 + 4).reduce((a, b) => a + b.score, 0))
+      })),
+      topList: sorted.slice(0, 10).map((st, i) => ({
+        rank: i + 1, name: [st.name, st.en].filter(Boolean).join(" "),
+        score: String(base + st.score), delta: label(st.score),
+        barWidth: Math.round((Math.abs(st.score) / max) * 56) + "px"
+      })),
+      watchList: (() => {
+        const minusOf = st => clsLogs.filter(l => l.studentId === st.id && l.delta < 0);
+        const ranked = cls.students.filter(st => minusOf(st).length)
+          .sort((a, b) => minusOf(b).length - minusOf(a).length || a.score - b.score).slice(0, 5);
+        return ranked.map(st => {
+          const mine = minusOf(st);
+          const g = {};
+          mine.forEach(l => { const k = l.reason.replace(/^作業：/, ""); g[k] = (g[k] || 0) + 1; });
+          const top = Object.keys(g).sort((a, b) => g[b] - g[a])[0];
+          return {
+            name: [st.name, st.en].filter(Boolean).join(" "),
+            score: String(base + st.score),
+            detail: "共 " + mine.length + " 次扣分 · 最多：" + top + "（" + g[top] + " 次）"
+          };
+        });
+      })(),
+      noWatch: !clsLogs.some(l => l.delta < 0),
+      plusStats: (() => {
+        const g = {};
+        clsLogs.filter(l => l.delta > 0).forEach(l => { const k = l.reason.replace(/^作業：/, ""); g[k] = (g[k] || 0) + 1; });
+        const m = Math.max(1, ...Object.values(g));
+        return Object.keys(g).sort((a, b) => g[b] - g[a]).slice(0, 5).map(k => ({
+          label: k, count: g[k], barWidth: Math.round((g[k] / m) * 70) + "px"
+        }));
+      })(),
+      minusStats: (() => {
+        const g = {};
+        clsLogs.filter(l => l.delta < 0).forEach(l => { const k = l.reason.replace(/^作業：/, ""); g[k] = (g[k] || 0) + 1; });
+        const m = Math.max(1, ...Object.values(g));
+        return Object.keys(g).sort((a, b) => g[b] - g[a]).slice(0, 5).map(k => ({
+          label: k, count: g[k], barWidth: Math.round((g[k] / m) * 70) + "px"
+        }));
+      })(),
+      logRows: clsLogs.slice(-40).reverse().map(l => ({
+        time: this.time(l.at), student: l.student, reason: l.reason, delta: label(l.delta),
+        color: l.delta > 0 ? posColor : negColor, remove: () => this.revert(l.id)
+      })),
+      todayStats: [
+        { label: "起始分數", value: base },
+        { label: "今日紀錄筆數", value: todays.length },
+        { label: "今日加分", value: label(todays.filter(l => l.delta > 0).reduce((a, b) => a + b.delta, 0)) },
+        { label: "今日扣分", value: label(todays.filter(l => l.delta < 0).reduce((a, b) => a + b.delta, 0)) }
+      ]
+    };
+  }
+}
+</script>
 </body>
 </html>
