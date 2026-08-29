@@ -399,12 +399,13 @@ textarea.input { min-height: 90px; resize: vertical; }
       <sc-if value="{{ isStats }}" hint-placeholder-val="{{ false }}">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4)">
           <div class="card elev-sm" style="background: var(--color-neutral-100); border-radius: var(--radius-lg); padding: var(--space-6)">
-            <div class="card-kicker" style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700)">本週前段</div>
+            <div class="card-kicker" style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700)">積分前十名</div>
             <h3 style="font-size: 22px; margin: 4px 0 var(--space-4)">表現亮眼</h3>
-            <sc-for list="{{ topList }}" as="r" hint-placeholder-count="6">
+            <sc-for list="{{ topList }}" as="r" hint-placeholder-count="10">
               <div style="display: flex; align-items: center; gap: var(--space-3); padding: 8px 0; border-bottom: 1px solid var(--color-divider)">
                 <span class="text-muted" style="font-size: 12px; width: 18px">{{ r.rank }}</span>
                 <span style="flex: 1; font-size: 15px">{{ r.name }}</span>
+                <span class="text-muted" style="font-size: 12px">{{ r.delta }}</span>
                 <span style="height: 8px; border-radius: 999px; background: var(--color-accent-2-400); width: {{ r.barWidth }}"></span>
                 <span style="font-weight: 700; color: var(--color-accent-2-800); width: 34px; text-align: right">{{ r.score }}</span>
               </div>
@@ -413,23 +414,37 @@ textarea.input { min-height: 90px; resize: vertical; }
 
           <div class="card elev-sm" style="background: var(--color-neutral-100); border-radius: var(--radius-lg); padding: var(--space-6)">
             <div class="card-kicker" style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700)">需要關注</div>
-            <h3 style="font-size: 22px; margin: 4px 0 var(--space-4)">扣分較多</h3>
+            <h3 style="font-size: 22px; margin: 4px 0 var(--space-4)">扣分較多前五位</h3>
             <sc-for list="{{ watchList }}" as="r" hint-placeholder-count="5">
-              <div style="display: flex; align-items: center; gap: var(--space-3); padding: 8px 0; border-bottom: 1px solid var(--color-divider)">
-                <span style="flex: 1; font-size: 15px">{{ r.name }}</span>
-                <span class="text-muted" style="font-size: 12px">{{ r.detail }}</span>
+              <div style="display: flex; align-items: baseline; gap: var(--space-3); padding: 8px 0; border-bottom: 1px solid var(--color-divider)">
+                <div style="flex: 1">
+                  <div style="font-size: 15px">{{ r.name }}</div>
+                  <div class="text-muted" style="font-size: 12px">{{ r.detail }}</div>
+                </div>
                 <span style="font-weight: 700; color: var(--color-accent-700); width: 34px; text-align: right">{{ r.score }}</span>
               </div>
             </sc-for>
+            <sc-if value="{{ noWatch }}" hint-placeholder-val="{{ false }}">
+              <div class="text-muted" style="font-size: 13px">目前沒有扣分紀錄。</div>
+            </sc-if>
           </div>
 
           <div class="card elev-sm" style="background: var(--color-neutral-100); border-radius: var(--radius-lg); padding: var(--space-6)">
             <div class="card-kicker" style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700)">原因統計</div>
             <h3 style="font-size: 22px; margin: 4px 0 var(--space-4)">這個班最常發生</h3>
-            <sc-for list="{{ reasonStats }}" as="r" hint-placeholder-count="6">
+            <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-2-700); margin-bottom: 4px">最常加分</div>
+            <sc-for list="{{ plusStats }}" as="r" hint-placeholder-count="5">
               <div style="display: flex; align-items: center; gap: var(--space-3); padding: 7px 0">
                 <span style="flex: 1; font-size: 14px">{{ r.label }}</span>
-                <span style="height: 8px; border-radius: 999px; background: {{ r.barColor }}; width: {{ r.barWidth }}"></span>
+                <span style="height: 8px; border-radius: 999px; background: var(--color-accent-2-400); width: {{ r.barWidth }}"></span>
+                <span class="text-muted" style="font-size: 13px; width: 40px; text-align: right">{{ r.count }} 次</span>
+              </div>
+            </sc-for>
+            <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700); margin: var(--space-4) 0 4px">最常扣分</div>
+            <sc-for list="{{ minusStats }}" as="r" hint-placeholder-count="5">
+              <div style="display: flex; align-items: center; gap: var(--space-3); padding: 7px 0">
+                <span style="flex: 1; font-size: 14px">{{ r.label }}</span>
+                <span style="height: 8px; border-radius: 999px; background: var(--color-accent-400); width: {{ r.barWidth }}"></span>
                 <span class="text-muted" style="font-size: 13px; width: 40px; text-align: right">{{ r.count }} 次</span>
               </div>
             </sc-for>
@@ -497,7 +512,38 @@ textarea.input { min-height: 90px; resize: vertical; }
           </div>
 
           <div class="hr" style="height: 1px; border: 0; background: var(--color-divider); margin: var(--space-6) 0 var(--space-4)"></div>
-          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral-700); margin-bottom: var(--space-2)">個人紀錄</div>
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral-700); margin-bottom: var(--space-2)">本次段考統計</div>
+          <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-4)">
+            <sc-for list="{{ sel.summary }}" as="m" hint-placeholder-count="4">
+              <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: 8px 12px; min-width: 74px">
+                <div class="text-muted" style="font-size: 11px">{{ m.label }}</div>
+                <div style="font-family: var(--font-heading), 'Noto Sans TC', sans-serif; font-size: 20px; line-height: 1.1; color: {{ m.color }}">{{ m.value }}</div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral-700); margin-bottom: var(--space-2)">作業繳交明細</div>
+          <sc-for list="{{ sel.homework }}" as="h" hint-placeholder-count="3">
+            <div style="display: flex; gap: var(--space-3); align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--color-divider); font-size: 13px">
+              <span style="flex: 1">{{ h.title }}</span>
+              <span class="tag {{ h.tagClass }}" style="font-size: 12px">{{ h.status }}</span>
+              <span style="font-weight: 700; color: {{ h.color }}; width: 26px; text-align: right">{{ h.delta }}</span>
+            </div>
+          </sc-for>
+          <sc-if value="{{ sel.noHomework }}" hint-placeholder-val="{{ false }}">
+            <div class="text-muted" style="font-size: 13px">這次段考還沒有作業檢查紀錄。</div>
+          </sc-if>
+
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral-700); margin: var(--space-4) 0 var(--space-2)">加扣分明細</div>
+          <sc-for list="{{ sel.reasonBreakdown }}" as="b" hint-placeholder-count="4">
+            <div style="display: flex; gap: var(--space-3); align-items: baseline; padding: 5px 0; font-size: 13px">
+              <span style="flex: 1">{{ b.label }}</span>
+              <span class="text-muted" style="font-size: 12px">{{ b.count }} 次</span>
+              <span style="font-weight: 700; color: {{ b.color }}; width: 30px; text-align: right">{{ b.total }}</span>
+            </div>
+          </sc-for>
+
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral-700); margin: var(--space-4) 0 var(--space-2)">最近紀錄</div>
           <sc-for list="{{ sel.history }}" as="h" hint-placeholder-count="4">
             <div style="display: flex; gap: var(--space-3); align-items: baseline; padding: 5px 0; font-size: 13px">
               <span class="text-muted" style="width: 44px">{{ h.time }}</span>
@@ -880,14 +926,48 @@ class Component extends DCLogic {
       breakdown: "起始 " + base + " 分 · 加扣分 " + label(selStu.score),
       color: selStu.score > 0 ? posColor : selStu.score < 0 ? negColor : zeroColor,
       empty: hist.length === 0,
-      history: hist.map(l => ({ time: this.time(l.at), reason: l.reason, delta: label(l.delta), color: l.delta > 0 ? posColor : negColor }))
-    } : { history: [] };
+      history: hist.map(l => ({ time: this.time(l.at), reason: l.reason, delta: label(l.delta), color: l.delta > 0 ? posColor : negColor })),
+      summary: (() => {
+        const mine = clsLogs.filter(l => l.studentId === selStu.id);
+        const plus = mine.filter(l => l.delta > 0).reduce((a, b) => a + b.delta, 0);
+        const minus = mine.filter(l => l.delta < 0).reduce((a, b) => a + b.delta, 0);
+        return [
+          { label: "加分", value: label(plus), color: posColor },
+          { label: "扣分", value: minus ? label(minus) : "0", color: minus ? negColor : zeroColor },
+          { label: "紀錄", value: mine.length, color: "var(--color-text)" },
+          { label: "目前", value: base + selStu.score, color: selStu.score >= 0 ? posColor : negColor }
+        ];
+      })(),
+      homework: (s.homeworks || []).filter(h => h.classId === cls.id).slice().reverse().map(h => {
+        const pending = h.pending.indexOf(selStu.id) > -1;
+        const madeUp = clsLogs.some(l => l.studentId === selStu.id && l.reason === h.title + " 補交 +1");
+        const done = clsLogs.some(l => l.studentId === selStu.id && l.reason === h.title + " 完成 +1");
+        return {
+          title: h.title.replace(/^作業：/, ""),
+          status: done ? "已完成" : madeUp ? "已補交" : pending ? "未完成" : "—",
+          tagClass: done || madeUp ? "tag-accent-2" : pending ? "tag-accent" : "tag-neutral",
+          delta: label(done ? 1 : madeUp ? 0 : -1),
+          color: done || madeUp ? posColor : negColor
+        };
+      }),
+      noHomework: !(s.homeworks || []).some(h => h.classId === cls.id),
+      reasonBreakdown: (() => {
+        const mine = clsLogs.filter(l => l.studentId === selStu.id);
+        const g = {};
+        mine.forEach(l => {
+          const k = l.reason;
+          g[k] = g[k] || { count: 0, total: 0, delta: l.delta };
+          g[k].count++; g[k].total += l.delta;
+        });
+        return Object.keys(g).sort((a, b) => g[b].count - g[a].count).map(k => ({
+          label: k.replace(/^作業：/, ""), count: g[k].count,
+          total: label(g[k].total), color: g[k].total > 0 ? posColor : negColor
+        }));
+      })()
+    } : { history: [], summary: [], homework: [], reasonBreakdown: [] };
 
     const sorted = cls.students.slice().sort((a, b) => b.score - a.score);
     const max = Math.max(1, ...cls.students.map(x => Math.abs(x.score)));
-    const rCount = {};
-    clsLogs.forEach(l => { rCount[l.reason] = (rCount[l.reason] || 0) + 1; });
-    const rMax = Math.max(1, ...Object.values(rCount));
     const today = new Date().toDateString();
     const todays = clsLogs.filter(l => new Date(l.at).toDateString() === today);
 
@@ -942,19 +1022,44 @@ class Component extends DCLogic {
         name: "第 " + (gi + 1) + " 組",
         score: label(cls.students.slice(gi * 4, gi * 4 + 4).reduce((a, b) => a + b.score, 0))
       })),
-      topList: sorted.slice(0, 6).map((st, i) => ({
-        rank: i + 1, name: [st.name, st.en].filter(Boolean).join(" "), score: String(base + st.score),
-        barWidth: Math.round((Math.abs(st.score) / max) * 70) + "px"
+      topList: sorted.slice(0, 10).map((st, i) => ({
+        rank: i + 1, name: [st.name, st.en].filter(Boolean).join(" "),
+        score: String(base + st.score), delta: label(st.score),
+        barWidth: Math.round((Math.abs(st.score) / max) * 56) + "px"
       })),
-      watchList: sorted.slice(-5).reverse().map(st => ({
-        name: [st.name, st.en].filter(Boolean).join(" "), score: String(base + st.score),
-        detail: clsLogs.filter(l => l.studentId === st.id && l.delta < 0).length + " 次扣分"
-      })),
-      reasonStats: Object.keys(rCount).sort((a, b) => rCount[b] - rCount[a]).slice(0, 7).map(k => ({
-        label: k, count: rCount[k],
-        barColor: k.indexOf("-") > -1 ? "var(--color-accent-400)" : "var(--color-accent-2-400)",
-        barWidth: Math.round((rCount[k] / rMax) * 70) + "px"
-      })),
+      watchList: (() => {
+        const minusOf = st => clsLogs.filter(l => l.studentId === st.id && l.delta < 0);
+        const ranked = cls.students.filter(st => minusOf(st).length)
+          .sort((a, b) => minusOf(b).length - minusOf(a).length || a.score - b.score).slice(0, 5);
+        return ranked.map(st => {
+          const mine = minusOf(st);
+          const g = {};
+          mine.forEach(l => { const k = l.reason.replace(/^作業：/, ""); g[k] = (g[k] || 0) + 1; });
+          const top = Object.keys(g).sort((a, b) => g[b] - g[a])[0];
+          return {
+            name: [st.name, st.en].filter(Boolean).join(" "),
+            score: String(base + st.score),
+            detail: "共 " + mine.length + " 次扣分 · 最多：" + top + "（" + g[top] + " 次）"
+          };
+        });
+      })(),
+      noWatch: !clsLogs.some(l => l.delta < 0),
+      plusStats: (() => {
+        const g = {};
+        clsLogs.filter(l => l.delta > 0).forEach(l => { const k = l.reason.replace(/^作業：/, ""); g[k] = (g[k] || 0) + 1; });
+        const m = Math.max(1, ...Object.values(g));
+        return Object.keys(g).sort((a, b) => g[b] - g[a]).slice(0, 5).map(k => ({
+          label: k, count: g[k], barWidth: Math.round((g[k] / m) * 70) + "px"
+        }));
+      })(),
+      minusStats: (() => {
+        const g = {};
+        clsLogs.filter(l => l.delta < 0).forEach(l => { const k = l.reason.replace(/^作業：/, ""); g[k] = (g[k] || 0) + 1; });
+        const m = Math.max(1, ...Object.values(g));
+        return Object.keys(g).sort((a, b) => g[b] - g[a]).slice(0, 5).map(k => ({
+          label: k, count: g[k], barWidth: Math.round((g[k] / m) * 70) + "px"
+        }));
+      })(),
       logRows: clsLogs.slice(-40).reverse().map(l => ({
         time: this.time(l.at), student: l.student, reason: l.reason, delta: label(l.delta),
         color: l.delta > 0 ? posColor : negColor, remove: () => this.revert(l.id)
